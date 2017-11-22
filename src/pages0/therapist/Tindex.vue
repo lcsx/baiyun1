@@ -43,7 +43,7 @@
 						</el-table-column>
 						<el-table-column label="操作">
 							<template slot-scope="scope">
-								<el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+								<el-button size="mini" @click="execute(scope.$index, scope.row)">执行</el-button>
 								<el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
 							</template>
 						</el-table-column>
@@ -52,7 +52,6 @@
 			</el-col>
 			<el-col :span="1">&nbsp;</el-col>
 		</el-row>
-
 	</div>
 </template>
 
@@ -108,8 +107,9 @@
 			}
 		},
 		methods: {
-			handleEdit(index, row) {
+			execute(index, row) {
 				console.log(index, row);
+				this.$router.push({path:'/execution'})
 			},
 			handleDelete(index, row) {
 				console.log(index, row);

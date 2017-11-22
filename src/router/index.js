@@ -26,6 +26,25 @@ import TreamentHistory from '@/pages0/doctor/TreamentHistory'
 import Tindex from '@/pages0/therapist/Tindex'
 import Thistory from '@/pages0/therapist/Thistory'
 import Tinfor from '@/pages0/therapist/Tinfor'
+import Execution from '@/pages0/therapist/Execution'
+
+
+
+//admin
+import userMg from '@/pages0/admin/userMg'
+import roleMg from '@/pages0/admin/roleMg'
+import rightMg from '@/pages0/admin/rightMg'
+
+import treamentItems from '@/pages0/admin/treamentItems'
+import costItems from '@/pages0/admin/costItems'
+import treatment from '@/pages0/admin/treatment'
+import frequency from '@/pages0/admin/frequency'
+import treatmentRoom from '@/pages0/admin/treatmentRoom'
+import equipment from '@/pages0/admin/equipment'
+import parts from '@/pages0/admin/parts'
+
+import config from '@/pages0/admin/config'
+
 
 
 Vue.use(Router)
@@ -40,7 +59,62 @@ export default new Router({
 		{
 			path: '/admin',
 			name: 'admin',
-			component: Admin
+			component: Admin,
+			children:[{
+				path: 'userMg',
+				name: 'userMg',
+				component: userMg,
+			},
+			{
+				path: 'roleMg',
+				name: 'roleMg',
+				component: roleMg,
+			},
+			{
+				path: 'rightMg',
+				name: 'rightMg',
+				component: rightMg,
+			},
+			{
+				path: 'treamentItems',
+				name: 'treamentItems',
+				component: treamentItems,
+			},
+			{
+				path: 'costItems',
+				name: 'costItems',
+				component: costItems,
+			},
+			{
+				path: 'treatment',
+				name: 'treatment',
+				component: treatment,
+			},
+			{
+				path: 'frequency',
+				name: 'frequency',
+				component: frequency,
+			},
+			{
+				path: 'treatmentRoom',
+				name: 'treatmentRoom',
+				component: treatmentRoom,
+			},
+			{
+				path: 'equipment',
+				name: 'equipment',
+				component: equipment,
+			},
+			{
+				path: 'parts',
+				name: 'parts',
+				component: parts,
+			},
+			{
+				path: 'config',
+				name: 'config',
+				component: config,
+			}]
 		},
 		{
 			path: '/doctor',
@@ -125,7 +199,7 @@ export default new Router({
 			children:[{
 				path:'tindex',
 				name:'Tindex',
-				component:Tindex
+				component:Tindex,
 			},
 			{
 				path:'thistory',
@@ -138,6 +212,11 @@ export default new Router({
 				component:Tinfor
 			}]
 		},
+		{
+			path:'/execution',
+			name:'Execution',
+			component:Execution
+		}
 		
 	]
 })
